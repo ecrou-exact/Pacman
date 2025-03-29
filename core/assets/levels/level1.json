@@ -1,0 +1,15 @@
+{
+  //"background": "Fond.png",
+  "width": 28,
+  "height": 16,
+  "char1": {"x": 10,"y": 1, "direction": "gauche", "speed":300,
+	     "initialShootDelay": 1, //valeur pour raffale
+	    "burstShootDelay": 2}, // valeur pour le delai
+  "walls": [
+	    { "x": 12, "y": 17 ,"direction": "gauche" ,"speed": 200},
+	    { "x": 26, "y": 11 ,"direction": "droite" ,"speed": 200 },
+	    { "x": 17, "y": 9 ,"direction": "gauche" ,"speed": 200}
+  ]
+
+  
+ }

@@ -24,7 +24,7 @@ public final class GameConstants {
     /**
      * Taille d'une tuile en pixels.
      */
-    public static final int TILE_SIZE = 32;
+    public static final int PACMAN_SIZE = 32;
 
     /**
      * Vitesse du joueur en unités par seconde.

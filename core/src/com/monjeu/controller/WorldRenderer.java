@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 import com.monjeu.model.GameElement;
+import com.monjeu.model.Pacman;
 import com.monjeu.model.World;
 import com.monjeu.view.GameOverScreen;
 import com.monjeu.view.GameWonScreen;
@@ -20,10 +21,10 @@ public class WorldRenderer {
     private SpriteBatch batch;
     private OrthographicCamera camera;
     private BitmapFont font;
+    
+    private PacmanControleur pacmanControleur;
 
-   
-    private static final int TILE_SIZE = 32;
-    private static final int PLAYER_SIZE = 25;
+
     
     // Game over flag and player explosion reference (if needed)
     private boolean gameOver = false;
@@ -37,11 +38,20 @@ public class WorldRenderer {
         this.camera = camera; 
         this.mainGame = mainGame;
         font = new BitmapFont();
+        
+        pacmanControleur = new PacmanControleur(world.getPacman(), world);
     }
     
     public void render(float delta) {
+    	
+    	pacmanControleur.update(delta);
+    	
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
+        
+        Pacman pacman = world.getPacman();
+        pacman.render(batch);
+        
         batch.end();
     }
     

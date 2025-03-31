@@ -50,8 +50,8 @@ public class TextureFactory {
        superBoule = new Texture(Gdx.files.internal("textures/Pacgommes/superpellet.png"));
        
        pacmanDroite1 = new Texture(Gdx.files.internal("textures/Pacman/droite/pacman-3.png"));
-       pacmanDroite2 = new Texture(Gdx.files.internal("textures/Pacman/droite/pacmanDown.png"));
-       pacmanDroite3 = new Texture(Gdx.files.internal("textures/Pacman/droite/pacmanDown-2.png"));
+       pacmanDroite2 = new Texture(Gdx.files.internal("textures/Pacman/droite/pacmanRight.png"));
+       pacmanDroite3 = new Texture(Gdx.files.internal("textures/Pacman/droite/pacmanRight-2.png"));
        
        pacmanGauche1 = new Texture(Gdx.files.internal("textures/Pacman/gauche/pacman-3.png"));
        pacmanGauche2 = new Texture(Gdx.files.internal("textures/Pacman/gauche/pacmanLeft.png"));
@@ -68,28 +68,32 @@ public class TextureFactory {
        pacmanDroiteAnimation = new Animation<>(0.06f, 
                new TextureRegion(pacmanDroite1),
                new TextureRegion(pacmanDroite2),
-               new TextureRegion(pacmanDroite3)
+               new TextureRegion(pacmanDroite3),
+               new TextureRegion(pacmanDroite2)
            );
        pacmanDroiteAnimation.setPlayMode(Animation.PlayMode.LOOP);
        
        pacmanGaucheAnimation = new Animation<>(0.06f, 
                new TextureRegion(pacmanGauche1),
                new TextureRegion(pacmanGauche2),
-               new TextureRegion(pacmanGauche3)
+               new TextureRegion(pacmanGauche3),
+               new TextureRegion(pacmanGauche2)
            );
        pacmanGaucheAnimation.setPlayMode(Animation.PlayMode.LOOP);
        
        pacmanHautAnimation = new Animation<>(0.06f, 
                new TextureRegion(pacmanHaut1),
                new TextureRegion(pacmanHaut2),
-               new TextureRegion(pacmanHaut3)
+               new TextureRegion(pacmanHaut3),
+               new TextureRegion(pacmanHaut2)
            );
        pacmanHautAnimation.setPlayMode(Animation.PlayMode.LOOP);
        
        pacmanBasAnimation = new Animation<>(0.06f, 
                new TextureRegion(pacmanBas1),
                new TextureRegion(pacmanBas2),
-               new TextureRegion(pacmanBas3)
+               new TextureRegion(pacmanBas3),
+               new TextureRegion(pacmanBas2)
            );
        pacmanBasAnimation.setPlayMode(Animation.PlayMode.LOOP);
     }
@@ -104,7 +108,6 @@ public class TextureFactory {
         }
         return instance;
     }
-    
     
     /**
      * Getter pour accéder aux Textures.

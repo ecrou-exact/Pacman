@@ -1,3 +1,8 @@
 {
-  "background": "texture/Labyrinthe/dark.png"
+  "background": "texture/Labyrinthe/dark.png",
+  "pacman": {
+	  "x": 1,
+	  "y": 1,
+	  "direction": "droite"
+  }	 
 }

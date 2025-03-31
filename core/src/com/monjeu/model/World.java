@@ -25,6 +25,7 @@ public class World {
      * Liste des éléments du jeu présents dans le monde.
      */
     private Array<GameElement> gameElements;
+    private Pacman pacman;
 
     /**
      * Constructeur qui initialise le monde et charge un niveau par défaut.
@@ -46,6 +47,10 @@ public class World {
 
         // Charger les informations de base du niveau
         this.background = levelData.background;
+        this.pacman = new Pacman( 
+        		levelData.pacman.x * GameConstants.PACMAN_SIZE,
+                levelData.pacman.y * GameConstants.PACMAN_SIZE,
+                levelData.pacman.direction);
     }
 
     /**
@@ -65,8 +70,17 @@ public class World {
     public void setGameElements(Array<GameElement> gameElements) {
         this.gameElements = gameElements;
     }
+    
 
-    /**
+    public Pacman getPacman() {
+		return pacman;
+	}
+
+	public void setPacman(Pacman pacman) {
+		this.pacman = pacman;
+	}
+
+	/**
      * Met à jour l'état du monde.
      * 
      * @param delta Temps écoulé depuis la dernière mise à jour.
@@ -92,6 +106,15 @@ public class World {
          * Nom du fichier de l'image de fond.
          */
         public String background;
+        public PacmanData pacman;
+        
+        
+        
+        public static class PacmanData{
+        	 public int x;
+             public int y;
+             public String direction;
+        }
     }
 }
 

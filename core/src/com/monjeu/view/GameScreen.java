@@ -37,10 +37,6 @@ public class GameScreen implements Screen {
         
     
 		batch.begin();
-        
-       
-        
-        batch.draw(TextureFactory.getInstance().getFondEcran(), 0, 0, 1200 , 1200);
         batch.end();
         
         

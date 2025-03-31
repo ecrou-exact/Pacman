@@ -14,26 +14,26 @@ public final class GameConstants {
     /**
      * Largeur de l'écran en pixels.
      */
-    public static final int SCREEN_WIDTH = 800;
+    public static final float SCREEN_WIDTH = 800;
 
     /**
      * Hauteur de l'écran en pixels.
      */
-    public static final int SCREEN_HEIGHT = 600;
+    public static final float SCREEN_HEIGHT = 600;
 
     /**
      * Taille de Pacman en pixels.
      */
-    public static final int PACMAN_SIZE = 32;
+    public static final float PACMAN_SIZE = 30;
     /**
      * Taille d'un Mur en pixels.
      */
-    public static final int WALL_SIZE = 32;
-
+    public static final float WALL_SIZE = 32;
+    
     /**
      * Vitesse du joueur en unités par seconde.
      */
-    public static final float PACMAN_SPEED = 200.0f;
+    public static final float PACMAN_SPEED = 140.0f;
 
     /**
      * Titre du jeu affiché dans la fenêtre.

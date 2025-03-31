@@ -48,18 +48,23 @@ public class World {
         // Charger les informations de base du niveau
         this.background = levelData.background;
         this.pacman = new Pacman( 
-        		levelData.pacman.x * GameConstants.PACMAN_SIZE,
-                levelData.pacman.y * GameConstants.PACMAN_SIZE,
+        		levelData.pacman.x * 32/*GameConstants.PACMAN_SIZE*/,
+                levelData.pacman.y * 32/*GameConstants.PACMAN_SIZE*/,
                 levelData.pacman.direction);
      
+      
+        
+        
         // Charger les murs
         for (LevelData.WallData wall : levelData.walls) {
             Wall wallObj = new Wall(wall.x * GameConstants.WALL_SIZE, wall.y * GameConstants.WALL_SIZE);
             gameElements.add(wallObj);
         }
     }
+    
 
-    /**
+
+	/**
      * Retourne la liste des éléments du jeu présents dans le monde.
      * 
      * @return Liste des éléments du jeu.

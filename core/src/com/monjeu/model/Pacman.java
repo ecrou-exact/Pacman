@@ -30,7 +30,7 @@ public class Pacman extends GameElement {
      * @param y Coordonnée Y initiale de Pacman.
      * @param direction Direction initiale de Pacman.
      */
-    public Pacman(int x, int y, String direction) {
+    public Pacman(float x, float y, String direction) {
         super(x, y, GameConstants.PACMAN_SIZE, GameConstants.PACMAN_SIZE);
         hitBoxPacman = new Rectangle(x, y, GameConstants.PACMAN_SIZE, GameConstants.PACMAN_SIZE);
         this.direction = direction;
@@ -48,6 +48,9 @@ public class Pacman extends GameElement {
      */
     public void setMoving(boolean moving) {
         this.isMoving = moving;
+    }
+    public boolean getMoving() {
+    	return this.isMoving;
     }
 
     /**

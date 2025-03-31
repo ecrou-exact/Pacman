@@ -7,7 +7,7 @@ import com.monjeu.view.TextureFactory;
 public class Wall extends GameElement {
 	private Rectangle hitBoxMur;
 
-	public Wall(int x, int y) {
+	public Wall(float x, float y) {
         super(x, y , GameConstants.WALL_SIZE,GameConstants.WALL_SIZE);
         hitBoxMur =  new Rectangle(x, y, GameConstants.WALL_SIZE, GameConstants.WALL_SIZE);
     }

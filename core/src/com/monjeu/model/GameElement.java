@@ -9,8 +9,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  * Les classes dérivées doivent implémenter les méthodes update et render.
  */
 public abstract class GameElement {
-    protected int x, y;
-    protected int width, height;
+    protected float x, y;
+    protected float width, height;
 
     /**
      * Constructeur de GameElement.
@@ -20,7 +20,7 @@ public abstract class GameElement {
      * @param width  Largeur de l'élément.
      * @param height Hauteur de l'élément.
      */
-    public GameElement(int x, int y, int width, int height) {
+    public GameElement(float x, float y, float width, float height) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -32,7 +32,7 @@ public abstract class GameElement {
      * 
      * @return La coordonnée x.
      */
-    public int getX() {
+    public float getX() {
         return x;
     }
 
@@ -41,7 +41,7 @@ public abstract class GameElement {
      * 
      * @param x Nouvelle coordonnée x.
      */
-    public void setX(int x) {
+    public void setX(float x) {
         this.x = x;
     }
 
@@ -50,7 +50,7 @@ public abstract class GameElement {
      * 
      * @return La coordonnée y.
      */
-    public int getY() {
+    public float getY() {
         return y;
     }
 
@@ -59,7 +59,7 @@ public abstract class GameElement {
      * 
      * @param y Nouvelle coordonnée y.
      */
-    public void setY(int y) {
+    public void setY(float y) {
         this.y = y;
     }
 
@@ -68,7 +68,7 @@ public abstract class GameElement {
      * 
      * @return La largeur.
      */
-    public int getWidth() {
+    public float getWidth() {
         return width;
     }
 
@@ -77,7 +77,7 @@ public abstract class GameElement {
      * 
      * @return La hauteur.
      */
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 

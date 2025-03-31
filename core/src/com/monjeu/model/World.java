@@ -51,6 +51,12 @@ public class World {
         		levelData.pacman.x * GameConstants.PACMAN_SIZE,
                 levelData.pacman.y * GameConstants.PACMAN_SIZE,
                 levelData.pacman.direction);
+     
+        // Charger les murs
+        for (LevelData.WallData wall : levelData.walls) {
+            Wall wallObj = new Wall(wall.x * GameConstants.WALL_SIZE, wall.y * GameConstants.WALL_SIZE);
+            gameElements.add(wallObj);
+        }
     }
 
     /**
@@ -106,7 +112,14 @@ public class World {
          * Nom du fichier de l'image de fond.
          */
         public String background;
+        /**
+         * Informations sur Pacman
+         */
         public PacmanData pacman;
+        /**
+         * Listes des murs
+         */
+        public Array<WallData> walls;
         
         
         
@@ -114,6 +127,10 @@ public class World {
         	 public int x;
              public int y;
              public String direction;
+        }
+        public static class WallData {
+            public int x;
+            public int y;
         }
     }
 }

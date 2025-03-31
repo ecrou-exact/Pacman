@@ -49,8 +49,18 @@ public class WorldRenderer {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         
+        
+        // afficher Pacman
         Pacman pacman = world.getPacman();
         pacman.render(batch);
+        
+        // afficher les murs
+        
+        for (GameElement element : world.getGameElements()) {
+        	if (element instanceof com.monjeu.model.Wall) {
+                element.render(batch);
+            }
+        }
         
         batch.end();
     }

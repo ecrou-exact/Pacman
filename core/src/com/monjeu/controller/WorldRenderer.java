@@ -36,23 +36,10 @@ public class WorldRenderer {
         this.batch = new SpriteBatch();
         this.camera = camera; 
         this.mainGame = mainGame;
-        
-       
-        
         font = new BitmapFont();
     }
     
     public void render(float delta) {
-    	
-
-    	
-    	 
-    	
-    	
-    	
-       
-        
-        // 6) Begin rendering
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         batch.end();

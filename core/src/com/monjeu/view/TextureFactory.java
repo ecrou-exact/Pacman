@@ -16,6 +16,7 @@ public class TextureFactory {
     private Texture fantome2;
     private Texture fantome3;
     private Texture fantome4;
+    private Texture fantomeEatAble;
     
     private Texture bloc;
     private Texture fond;
@@ -42,6 +43,7 @@ public class TextureFactory {
        fantome2 = new Texture(Gdx.files.internal("textures/Fantomes/ghost2.png"));
        fantome3 = new Texture(Gdx.files.internal("textures/Fantomes/ghost3.png"));
        fantome4 = new Texture(Gdx.files.internal("textures/Fantomes/ghost4.png"));
+       fantomeEatAble = new Texture(Gdx.files.internal("textures/Fantomes/ghostEatAble.png"));
        
        bloc = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc.png"));
        fond = new Texture(Gdx.files.internal("textures/Labyrinthe/dark.png"));
@@ -128,6 +130,11 @@ public class TextureFactory {
 	public Texture getFantome4() {
 		return fantome4;
 	}
+	public Texture getFantomeEatAble() {
+		return fantomeEatAble;
+	}
+	
+	
 
 	public Texture getBloc() {
 		return bloc;

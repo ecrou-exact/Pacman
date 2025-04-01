@@ -26,6 +26,7 @@ public class World {
      */
     private Array<GameElement> gameElements;
     private Pacman pacman;
+ 
 
     /**
      * Constructeur qui initialise le monde et charge un niveau par défaut.
@@ -45,24 +46,31 @@ public class World {
         Json json = new Json();
         LevelData levelData = json.fromJson(LevelData.class, file.readString());
 
+        int decalageX = 5;
+        int decalageY = 7;
+        
         // Charger les informations de base du niveau
         this.background = levelData.background;
         this.pacman = new Pacman( 
-        		levelData.pacman.x * 32/*GameConstants.PACMAN_SIZE*/,
-                levelData.pacman.y * 32/*GameConstants.PACMAN_SIZE*/,
+        		(levelData.pacman.x + decalageX) * 32/*GameConstants.PACMAN_SIZE*/,
+                (levelData.pacman.y + decalageY) * 32/*GameConstants.PACMAN_SIZE*/,
                 levelData.pacman.direction);
-     
-      
-        
-        
+
         // Charger les murs
         for (LevelData.WallData wall : levelData.walls) {
-            Wall wallObj = new Wall(wall.x * GameConstants.WALL_SIZE, wall.y * GameConstants.WALL_SIZE);
+            Wall wallObj = new Wall((wall.x + decalageX )* GameConstants.WALL_SIZE, (wall.y + decalageY) * GameConstants.WALL_SIZE);
             gameElements.add(wallObj);
-        }
+        } 
+        
+     // Charger les Ghosts
+        for (LevelData.GhostData ghost : levelData.ghosts) {
+            Ghost ghostObj = new Ghost((ghost.x + decalageX) * 32, (ghost.y +decalageY) * 32, ghost.direction , ghost.couleur);
+            gameElements.add(ghostObj);
+
+            
+        } 
     }
     
-
 
 	/**
      * Retourne la liste des éléments du jeu présents dans le monde.
@@ -125,8 +133,17 @@ public class World {
          * Listes des murs
          */
         public Array<WallData> walls;
+        /**
+         * Listes des méchants
+         */
+        public Array<GhostData> ghosts;
         
-        
+        public static class GhostData{
+        	public int x;
+            public int y;
+            public String direction;
+            public String couleur;
+        }
         
         public static class PacmanData{
         	 public int x;

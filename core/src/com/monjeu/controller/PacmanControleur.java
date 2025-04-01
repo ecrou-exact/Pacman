@@ -60,6 +60,9 @@ public class PacmanControleur {
      * @param delta Le temps écoulé depuis la dernière mise à jour.
      */
     private void movePacman(float delta) {
+    	// x:0 y:12  -> x:26 y:12
+   
+    	
         float nextX = pacman.getX();
         float nextY = pacman.getY();
         float speed = GameConstants.PACMAN_SPEED * delta;
@@ -78,6 +81,8 @@ public class PacmanControleur {
             pacman.setY((int) nextY);
         }
     }
+    
+   
 
     /**
      * Calcule la variation de position sur l'axe X en fonction de la direction.

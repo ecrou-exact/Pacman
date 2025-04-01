@@ -22,7 +22,7 @@ public class Wall extends GameElement {
 
 	@Override
 	public void render(SpriteBatch batch) {
-		batch.draw(TextureFactory.getInstance().getBloc(),this.getX(), this.getY(), GameConstants.WALL_SIZE, GameConstants.WALL_SIZE);
+		batch.draw(TextureFactory.getInstance().getBloc(),this.getX(), this.getY(), GameConstants.WALL_SIZE + 4, GameConstants.WALL_SIZE + 4);
 	}
 
 }

@@ -5,6 +5,24 @@
 	  "y": 1,
 	  "direction": "droite"
   },
+  "ghosts": [{
+	  "x": 9,
+	  "y": 12,
+	  "direction": "droite",
+	  "couleur": "rouge"
+  },{
+	  "x": 8,
+	  "y": 12,
+	  "direction": "droite",
+	  "couleur": "bleu"
+	
+  },{
+	  "x": 10,
+	  "y": 12,
+	  "direction": "gauche",
+	  "couleur": "jaune"
+	
+  }] ,
   "walls": [ 
 	  //cadre de 17 x 23
 	  { "x" : 0, "y" : 0 },

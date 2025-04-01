@@ -23,6 +23,7 @@ public class WorldRenderer {
     private BitmapFont font;
     
     private PacmanControleur pacmanControleur;
+    private GhostControleur ghostControleur;
 
 
     
@@ -40,11 +41,13 @@ public class WorldRenderer {
         font = new BitmapFont();
         
         pacmanControleur = new PacmanControleur(world.getPacman(), world);
+        ghostControleur = new GhostControleur( world);
     }
     
     public void render(float delta) {
     	
     	pacmanControleur.update(delta);
+    	ghostControleur.update(delta);
     	
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
@@ -60,7 +63,11 @@ public class WorldRenderer {
         	if (element instanceof com.monjeu.model.Wall) {
                 element.render(batch);
             }
+        	if (element instanceof com.monjeu.model.Ghost) {
+                element.render(batch);
+            }
         }
+        
         
         batch.end();
     }

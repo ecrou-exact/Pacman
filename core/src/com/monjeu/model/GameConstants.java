@@ -26,6 +26,10 @@ public final class GameConstants {
      */
     public static final float PACMAN_SIZE = 30;
     /**
+     * Taille de Ghost en pixels.
+     */
+    public static final float GHOST_SIZE = 30;
+    /**
      * Taille d'un Mur en pixels.
      */
     public static final float WALL_SIZE = 32;

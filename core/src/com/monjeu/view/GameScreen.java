@@ -21,6 +21,9 @@ public class GameScreen implements Screen {
     private static final float WORLD_WIDTH = 1000; // Largeur du monde
     private static final float WORLD_HEIGHT = 1200; // Hauteur du monde
 
+    // Indicateur pour savoir si la musique est activée ou non
+    private boolean musicEnabled;
+
     public GameScreen(MainGame game) {
         this.mainGame = game;
         world = new World();
@@ -35,6 +38,14 @@ public class GameScreen implements Screen {
 
         this.batch = new SpriteBatch();
         renderer = new WorldRenderer(world, camera, game);
+
+        // Vérifier si la musique est activée ou non depuis MainGame
+        this.musicEnabled = mainGame.isMusicEnabled();
+        
+        if (!musicEnabled) {
+            // Si la musique est coupée, arrêtez toute musique du jeu
+            stopGameMusic(); // Méthode pour arrêter la musique si nécessaire
+        }
     }
 
     @Override
@@ -75,4 +86,10 @@ public class GameScreen implements Screen {
     @Override public void hide() {}
     @Override public void pause() {}
     @Override public void resume() {}
+
+    // Méthode pour arrêter toute musique dans le jeu (vous pouvez adapter cela en fonction de votre gestion du son)
+    private void stopGameMusic() {
+        // Si vous avez une musique de fond dans le jeu, arrêtez-la ici
+        // Exemple : music.stop();
+    }
 }

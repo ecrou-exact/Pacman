@@ -53,9 +53,7 @@ public class WorldRenderer {
         batch.begin();
         
         
-        // afficher Pacman
-        Pacman pacman = world.getPacman();
-        pacman.render(batch);
+      
         
         // afficher les murs
         
@@ -66,8 +64,16 @@ public class WorldRenderer {
         	if (element instanceof com.monjeu.model.Ghost) {
                 element.render(batch);
             }
+        	if (element instanceof com.monjeu.model.Pacgom) {							// J'ai rajouté ca
+        		if (((com.monjeu.model.Pacgom) element).getActive()) {
+        			element.render(batch);
+        		}
+        	}
         }
         
+        // afficher Pacman
+        Pacman pacman = world.getPacman();
+        pacman.render(batch);
         
         batch.end();
     }

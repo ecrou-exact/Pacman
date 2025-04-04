@@ -65,7 +65,7 @@ public class PacmanControleur {
     	
         float nextX = pacman.getX();
         float nextY = pacman.getY();
-        float speed = GameConstants.PACMAN_SPEED * delta;
+        float speed = 2; //GameConstants.PACMAN_SPEED * delta;
 
         // Vérifie si Pacman peut se déplacer dans la direction souhaitée
         if (canMoveTo(nextX + getDeltaX(desiredDirection, speed), nextY + getDeltaY(desiredDirection, speed))) {

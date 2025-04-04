@@ -11,6 +11,7 @@ public class Wall extends GameElement {
         super(x, y , GameConstants.WALL_SIZE,GameConstants.WALL_SIZE);
         hitBoxMur =  new Rectangle(x, y, GameConstants.WALL_SIZE, GameConstants.WALL_SIZE);
     }
+	
 	public Rectangle getHitBox() {
 		return hitBoxMur;
 	}

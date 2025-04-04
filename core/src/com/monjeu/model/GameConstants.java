@@ -10,34 +10,39 @@ public final class GameConstants {
      * Constructeur privé pour empêcher l'instanciation de la classe.
      */
     private GameConstants() {}
-
     /**
      * Largeur de l'écran en pixels.
      */
     public static final float SCREEN_WIDTH = 800;
-
     /**
      * Hauteur de l'écran en pixels.
      */
     public static final float SCREEN_HEIGHT = 600;
-
+    
     /**
      * Taille de Pacman en pixels.
      */
-    public static final float PACMAN_SIZE = 30;
+    public static final float PACMAN_SIZE = 32;
+    
     /**
-     * Taille de Ghost en pixels.
+     * Taille des Pacgom en pixels.
      */
-    public static final float GHOST_SIZE = 30;
+    public static final float PACGOM_SIZE = 32;
+    
+    /**
+     * Taille des Ghost en pixels.
+     */
+    public static final float GHOST_SIZE = 32;
+    
     /**
      * Taille d'un Mur en pixels.
      */
     public static final float WALL_SIZE = 32;
     
     /**
-     * Vitesse du joueur en unités par seconde.
+     * Vitesse de pacman en unités par seconde.
      */
-    public static final float PACMAN_SPEED = 140.0f;
+    public static final float PACMAN_SPEED = 200.0f;
 
     /**
      * Titre du jeu affiché dans la fenêtre.

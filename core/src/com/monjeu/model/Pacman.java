@@ -96,6 +96,7 @@ public class Pacman extends GameElement {
     }
 
     /**
+     * 
      * Dessine Pacman à l'écran en fonction de sa direction et de son état de mouvement.
      * @param batch SpriteBatch utilisé pour dessiner Pacman.
      */
@@ -123,7 +124,7 @@ public class Pacman extends GameElement {
         }
         
         if (frame != null) {
-            batch.draw(frame, getX(), getY(), width, height);
+            batch.draw(frame, getX(), getY(), (width-1), (height-1));
         }
     }
     

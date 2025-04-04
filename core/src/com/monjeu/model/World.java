@@ -33,7 +33,8 @@ public class World {
      */
     public World() {
         gameElements = new Array<GameElement>();
-        loadLevel("levels/level1.json");
+        // loadLevel("levels/level1.json");
+        loadLevel("levels/level2.json");
     }
     
     /**
@@ -52,17 +53,23 @@ public class World {
         // Charger les informations de base du niveau
         this.background = levelData.background;
         this.pacman = new Pacman( 
-        		(levelData.pacman.x + decalageX) * 32/*GameConstants.PACMAN_SIZE*/,
-                (levelData.pacman.y + decalageY) * 32/*GameConstants.PACMAN_SIZE*/,
+        		(levelData.pacman.x + decalageX) * GameConstants.WALL_SIZE,
+                (levelData.pacman.y + decalageY) * GameConstants.WALL_SIZE,
                 levelData.pacman.direction);
 
+        // Charger les Pacgom
+        for (LevelData.PacgomData pacgom : levelData.pacgom) {
+            Pacgom pacgomObj = new Pacgom((pacgom.x + decalageX )* GameConstants.PACGOM_SIZE, (pacgom.y + decalageY) * GameConstants.PACGOM_SIZE);
+            gameElements.add(pacgomObj);
+        } 
+        
         // Charger les murs
         for (LevelData.WallData wall : levelData.walls) {
             Wall wallObj = new Wall((wall.x + decalageX )* GameConstants.WALL_SIZE, (wall.y + decalageY) * GameConstants.WALL_SIZE);
             gameElements.add(wallObj);
-        } 
+        }
         
-     // Charger les Ghosts
+        // Charger les Ghosts
         for (LevelData.GhostData ghost : levelData.ghosts) {
             Ghost ghostObj = new Ghost((ghost.x + decalageX) * 32, (ghost.y +decalageY) * 32, ghost.direction , ghost.couleur);
             gameElements.add(ghostObj);
@@ -134,6 +141,10 @@ public class World {
          */
         public Array<WallData> walls;
         /**
+         * Listes des Pacgom
+         */
+        public Array<PacgomData> pacgom;
+        /**
          * Listes des méchants
          */
         public Array<GhostData> ghosts;
@@ -151,6 +162,10 @@ public class World {
              public String direction;
         }
         public static class WallData {
+            public int x;
+            public int y;
+        }
+        public static class PacgomData {
             public int x;
             public int y;
         }

@@ -5,16 +5,16 @@ import com.badlogic.gdx.math.Rectangle;
 import com.monjeu.view.TextureFactory;
 
 public class Pacgom extends GameElement {
-	private Rectangle hitBoxMur;
+	private Rectangle hitBoxPacGom;
 	private boolean active = true;
 	
 	public Pacgom(float x, float y) {
         super(x, y, GameConstants.PACGOM_SIZE,GameConstants.PACGOM_SIZE);
-        hitBoxMur =  new Rectangle(x, y, GameConstants.PACGOM_SIZE, GameConstants.PACGOM_SIZE);
+        hitBoxPacGom =  new Rectangle(x, y, GameConstants.PACGOM_SIZE, GameConstants.PACGOM_SIZE);
 	}
 	
     public Rectangle getHitBox() {
-    	return hitBoxMur;
+    	return hitBoxPacGom;
     }
 	
     @Override
@@ -31,6 +31,6 @@ public class Pacgom extends GameElement {
 	}
     
     public void setActive(boolean a) {
-		active = a;
+		this.active = a;
 	}
 }

@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Rectangle;
 import com.monjeu.model.GameConstants;
 import com.monjeu.model.GameElement;
+import com.monjeu.model.Pacgom;
 import com.monjeu.model.Pacman;
 import com.monjeu.model.Wall;
 import com.monjeu.model.World;
@@ -14,6 +15,7 @@ import com.monjeu.model.World;
 public class PacmanControleur {
     private Pacman pacman;
     private World world;
+    private WorldRenderer monWorldRenderer;
     private String desiredDirection;
 
     /**
@@ -22,9 +24,10 @@ public class PacmanControleur {
      * @param pacman Le personnage Pacman à contrôler.
      * @param world Le monde contenant les éléments du jeu.
      */
-    public PacmanControleur(Pacman pacman, World world) {
+    public PacmanControleur(Pacman pacman, World world ,WorldRenderer monWorldRenderer) {
         this.pacman = pacman;
         this.world = world;
+        this.monWorldRenderer = monWorldRenderer;
         this.desiredDirection = pacman.getDirection();
     }
 
@@ -37,12 +40,25 @@ public class PacmanControleur {
         pacman.update(delta);
         handleInput();
         movePacman(delta);
+        toucherBoulle();
+    }
+    public void toucherBoulle() {
+    	for (int i = world.getGameElements().size - 1; i >= 0; i--) {
+    		GameElement element = world.getGameElements().get(i);
+    		if (element instanceof Pacgom && pacman.getHitBoxPacman().overlaps(((Pacgom) element).getHitBox())) {
+                ((Pacgom) element).setActive(false);
+                world.getGameElements().removeIndex(i);
+                monWorldRenderer.rajoutePoint(100);
+                
+    		}        
+        }
     }
 
     /**
      * Gère les entrées utilisateur pour définir la direction souhaitée.
      */
     private void handleInput() {
+    	
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             desiredDirection = "gauche";
         } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
@@ -65,7 +81,7 @@ public class PacmanControleur {
     	
         float nextX = pacman.getX();
         float nextY = pacman.getY();
-        float speed = 2; //GameConstants.PACMAN_SPEED * delta;
+        float speed = GameConstants.PACMAN_SPEED;
 
         // Vérifie si Pacman peut se déplacer dans la direction souhaitée
         if (canMoveTo(nextX + getDeltaX(desiredDirection, speed), nextY + getDeltaY(desiredDirection, speed))) {

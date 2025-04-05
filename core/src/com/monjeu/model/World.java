@@ -71,7 +71,7 @@ public class World {
         
         // Charger les Ghosts
         for (LevelData.GhostData ghost : levelData.ghosts) {
-            Ghost ghostObj = new Ghost((ghost.x + decalageX) * 32, (ghost.y +decalageY) * 32, ghost.direction , ghost.couleur);
+            Ghost ghostObj = new Ghost((ghost.x + decalageX) * GameConstants.GHOST_SIZE, (ghost.y +decalageY) * GameConstants.GHOST_SIZE, ghost.direction , ghost.couleur);
             gameElements.add(ghostObj);
 
             

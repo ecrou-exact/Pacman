@@ -124,7 +124,7 @@ public class Pacman extends GameElement {
         }
         
         if (frame != null) {
-            batch.draw(frame, getX(), getY(), (width-1), (height-1));
+            batch.draw(frame, getX(), getY(), (width-3), (height-3));
         }
     }
     

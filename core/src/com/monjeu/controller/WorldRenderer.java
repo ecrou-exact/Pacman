@@ -29,7 +29,7 @@ public class WorldRenderer {
     
     // Game over flag and player explosion reference (if needed)
     private boolean gameOver = false;
-   
+    private int ScorePacman = 0 ; 
     
     private MainGame mainGame;
     
@@ -40,7 +40,7 @@ public class WorldRenderer {
         this.mainGame = mainGame;
         font = new BitmapFont();
         
-        pacmanControleur = new PacmanControleur(world.getPacman(), world);
+        pacmanControleur = new PacmanControleur(world.getPacman(), world, this);
         ghostControleur = new GhostControleur( world);
     }
     
@@ -65,7 +65,7 @@ public class WorldRenderer {
                 element.render(batch);
             }
         	if (element instanceof com.monjeu.model.Pacgom) {							// J'ai rajouté ca
-        		if (((com.monjeu.model.Pacgom) element).getActive()) {
+        		if (((com.monjeu.model.Pacgom) element).getActive() == true) {
         			element.render(batch);
         		}
         	}
@@ -75,12 +75,31 @@ public class WorldRenderer {
         Pacman pacman = world.getPacman();
         pacman.render(batch);
         
+        
+        
+        String ScoreMessage= "Scores :  " + this.ScorePacman;
+        font.getData().setScale(2);
+        font.draw(batch,  ScoreMessage, 10,  camera.viewportHeight - 30);
+        
         batch.end();
     }
     
    
     
-    public void dispose() {
+    public int getScorePacman() {
+    	
+		return ScorePacman;
+	}
+
+	public void setScorePacman(int scorePacman) {
+		ScorePacman = scorePacman;
+	}
+	
+	public void rajoutePoint(int scorePacman) {
+		this.ScorePacman = this.ScorePacman + scorePacman;
+	}
+
+	public void dispose() {
         batch.dispose();
         font.dispose();
     }

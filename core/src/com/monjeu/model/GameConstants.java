@@ -42,7 +42,7 @@ public final class GameConstants {
     /**
      * Vitesse de pacman en unités par seconde.
      */
-    public static final float PACMAN_SPEED = 200.0f;		// La vitesse ne marche plus, pacman est bloqué à une vitesse
+    public static final float PACMAN_SPEED = 2;		// La vitesse ne marche plus, pacman est bloqué à une vitesse
 
     /**
      * Titre du jeu affiché dans la fenêtre.

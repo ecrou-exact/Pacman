@@ -11,6 +11,9 @@ public class Ghost extends GameElement{
     private boolean isEatAble = false;
     private float stateTime;
     private boolean isMoving;
+    
+    private float initX;
+    private float initY;
 
 	public Ghost(float x, float y, String direction, String color) {
 		 super(x, y, GameConstants.GHOST_SIZE, GameConstants.GHOST_SIZE);

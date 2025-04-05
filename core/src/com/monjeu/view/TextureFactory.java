@@ -18,7 +18,21 @@ public class TextureFactory {
     private Texture fantome4;
     private Texture fantomeEatAble;
     
-    private Texture bloc;
+    private Texture bloc1;
+    private Texture bloc2;
+    private Texture bloc3;
+    private Texture bloc4;
+    private Texture bloc5;
+    private Texture bloc6;
+    private Texture bloc7;
+    private Texture bloc8;
+    private Texture bloc9;
+    private Texture bloc10;
+    private Texture bloc11;
+    private Texture bloc12;
+    private Texture bloc13;
+    private Texture bloc14;
+    
     private Texture fond;
     
     private Texture boule;
@@ -45,7 +59,21 @@ public class TextureFactory {
        fantome4 = new Texture(Gdx.files.internal("textures/Fantomes/ghost4.png"));
        fantomeEatAble = new Texture(Gdx.files.internal("textures/Fantomes/ghostEatAble.png"));
        
-       bloc = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc.png"));
+       bloc1 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc1.png"));
+       bloc2 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc2.png"));
+       bloc3 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc3.png"));
+       bloc4 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc4.png"));
+       bloc5 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc5.png"));
+       bloc6 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc6.png"));
+       bloc7 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc7.png"));
+       bloc8 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc8.png"));
+       bloc9 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc9.png"));
+       bloc10 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc10.png"));
+       bloc11 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc11.png"));
+       bloc12 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc12.png"));
+       bloc13 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc13.png"));
+       bloc14 = new Texture(Gdx.files.internal("textures/Labyrinthe/bloc14.png"));
+       
        fond = new Texture(Gdx.files.internal("textures/Labyrinthe/dark.png"));
        
        boule = new Texture(Gdx.files.internal("textures/Pacgommes/pellet.png"));
@@ -136,10 +164,49 @@ public class TextureFactory {
 	
 	
 
-	public Texture getBloc() {
-		return bloc;
+	public Texture getBloc1() {
+		return bloc1;
 	}
-
+	public Texture getBloc2() {
+		return bloc2;
+	}
+	public Texture getBloc3() {
+		return bloc3;
+	}
+	public Texture getBloc4() {
+		return bloc4;
+	}
+	public Texture getBloc5() {
+		return bloc5;
+	}
+	public Texture getBloc6() {
+		return bloc6;
+	}
+	public Texture getBloc7() {
+		return bloc7;
+	}
+	public Texture getBloc8() {
+		return bloc8;
+	}
+	public Texture getBloc9() {
+		return bloc9;
+	}
+	public Texture getBloc10() {
+		return bloc10;
+	}
+	public Texture getBloc11() {
+		return bloc11;
+	}
+	public Texture getBloc12() {
+		return bloc12;
+	}
+	public Texture getBloc13() {
+		return bloc13;
+	}
+	public Texture getBloc14() {
+		return bloc14;
+	}
+	
 	public Texture getFond() {
 		return fond;
 	}
@@ -224,7 +291,22 @@ public class TextureFactory {
         if (fantome2 != null) fantome2.dispose();
         if (fantome3 != null) fantome3.dispose();
         if (fantome4 != null) fantome4.dispose();
-        if (bloc != null) bloc.dispose();
+        
+        if (bloc1 != null) bloc1.dispose();
+        if (bloc2 != null) bloc2.dispose();
+        if (bloc3 != null) bloc3.dispose();
+        if (bloc4 != null) bloc4.dispose();
+        if (bloc5 != null) bloc5.dispose();
+        if (bloc6 != null) bloc6.dispose();
+        if (bloc7 != null) bloc7.dispose();
+        if (bloc8 != null) bloc8.dispose();
+        if (bloc9 != null) bloc9.dispose();
+        if (bloc10 != null) bloc10.dispose();
+        if (bloc11 != null) bloc11.dispose();
+        if (bloc12 != null) bloc12.dispose();
+        if (bloc13 != null) bloc13.dispose();
+        if (bloc14 != null) bloc14.dispose();
+        
         if (fond != null) fond.dispose();
         if (boule != null) boule.dispose();
         if (superBoule != null) superBoule.dispose();

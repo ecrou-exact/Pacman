@@ -65,7 +65,7 @@ public class World {
         
         // Charger les murs
         for (LevelData.WallData wall : levelData.walls) {
-            Wall wallObj = new Wall((wall.x + decalageX )* GameConstants.WALL_SIZE, (wall.y + decalageY) * GameConstants.WALL_SIZE);
+            Wall wallObj = new Wall((wall.x + decalageX )* GameConstants.WALL_SIZE, (wall.y + decalageY) * GameConstants.WALL_SIZE, wall.type);
             gameElements.add(wallObj);
         }
         
@@ -164,6 +164,7 @@ public class World {
         public static class WallData {
             public int x;
             public int y;
+            public int type;
         }
         public static class PacgomData {
             public int x;

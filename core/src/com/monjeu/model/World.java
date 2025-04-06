@@ -33,8 +33,8 @@ public class World {
      */
     public World() {
         gameElements = new Array<GameElement>();
-        // loadLevel("levels/level1.json");
-        loadLevel("levels/level2.json");
+        loadLevel("levels/level1.json");
+        // loadLevel("levels/level2.json");
     }
     
     /**
@@ -56,7 +56,7 @@ public class World {
         		(levelData.pacman.x + decalageX) * GameConstants.WALL_SIZE,
                 (levelData.pacman.y + decalageY) * GameConstants.WALL_SIZE,
                 levelData.pacman.direction);
-
+        
         // Charger les Pacgom
         for (LevelData.PacgomData pacgom : levelData.pacgom) {
             Pacgom pacgomObj = new Pacgom((pacgom.x + decalageX )* GameConstants.PACGOM_SIZE, (pacgom.y + decalageY) * GameConstants.PACGOM_SIZE);

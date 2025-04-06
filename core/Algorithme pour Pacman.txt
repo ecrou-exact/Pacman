@@ -1,0 +1,64 @@
+
+^
+|
+XXXXXXXXX	
+XXXX fX7X
+XXXXX8XXX
+XXXXXX87X
+X3X5XX76X
+X234X965X
+X1 XXX54X
+XP123443X
+XXXXXXXXX -> 
+
+
+(0,2)(1,2)(2,2)
+(0,1)(1,1)(2,1)
+(0,0)(1,0)(2,0)
+
+
+calculeDistance(M,Px,Py,CompteurDeDistance){
+
+if ( M(Px,Py) === vide  ) alors je peux ecrire 1 distance + reussi = oui
+else ( M(Px,Py) === chiffre ) alors je peux ecrire 1 distance seulement mon compteur de distance est plus petit que le valeur dans la case  + reussi = oui ou non
+     if chiffre > CompteurDeDistance alors je peux ecrire CompteurDeDistance à la place de chiffre
+             
+
+if ( M(Px+1,Py) === vide ou M(Px+1,Py) > CompteurDeDistance+1) alors 
+     calculeDistance(M,Px+1,Py,CompteurDeDistance+1)
+
+if ( M(Px,Py+1) === vide ou M(Px,Py+1) > CompteurDeDistance+1) alors 
+     calculeDistance(M,Px,Py+1,CompteurDeDistance+1)
+
+if ( M(Px-1,Py) === vide ou M(Px-1,Py) > CompteurDeDistance+1) alors 
+     calculeDistance(M,Px-1,Py,CompteurDeDistance+1)
+
+if ( M(Px,Py-1) === vide ou M(Px,Py-1) > CompteurDeDistance+1) alors 
+     calculeDistance(M,Px,Py-1,CompteurDeDistance+1)
+
+
+
+main programme principale:
+1) initialiser la matrice et mettre les murs partout ils sont prédéfinis, Pacman et Fantomes
+2) faire 1 réccurence sur calculeDistance
+3) démarrer le jeu
+
+
+
+i=1
+calculeDistance(M,2,1,i)
+
+
+
+
+2 -> 
+
+i=1
+calculeDistance(M,2,1,i)
+calculeDistance(M,1,2,i)
+calculeDistance(M,0,1,i) MUR
+calculeDistance(M,1,0,i) MUR
+
+i=2
+calculeDistance(M,3,1,i)
+calculeDistance(M,2,2,i)

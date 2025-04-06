@@ -10,6 +10,7 @@ public class Wall extends GameElement {
 
 	public Wall(float x, float y, int type) {
         super(x, y , GameConstants.WALL_SIZE,GameConstants.WALL_SIZE);
+        this.type = type;
         hitBoxMur =  new Rectangle(x, y, GameConstants.WALL_SIZE, GameConstants.WALL_SIZE);
     }
 	
@@ -24,13 +25,11 @@ public class Wall extends GameElement {
 
 	@Override
 	public void render(SpriteBatch batch) {
-		if( this.type == 1) {
-			 batch.draw(TextureFactory.getInstance().getBloc1(), this.getX(), this.getY(), GameConstants.WALL_SIZE + 4, GameConstants.WALL_SIZE + 4);
-		}else {
-			//batch.draw(TextureFactory.getInstance().getBloc14(), this.getX(), this.getY(), GameConstants.WALL_SIZE + 4, GameConstants.WALL_SIZE + 4);
-		}
-			/*switch (this.type) {
-	        case 1:
+			switch (this.type) {
+			case 0:
+	            batch.draw(TextureFactory.getInstance().getBloc0(), this.getX(), this.getY(), GameConstants.WALL_SIZE + 4, GameConstants.WALL_SIZE + 4);
+	            break;
+			case 1:
 	            batch.draw(TextureFactory.getInstance().getBloc1(), this.getX(), this.getY(), GameConstants.WALL_SIZE + 4, GameConstants.WALL_SIZE + 4);
 	            break;
 	        case 2:
@@ -75,7 +74,7 @@ public class Wall extends GameElement {
 	        default:
 	            batch.draw(TextureFactory.getInstance().getBloc14(), this.getX(), this.getY(), GameConstants.WALL_SIZE + 4, GameConstants.WALL_SIZE + 4);
 	            break;
-	    }*/
+	    }
 		
 	}
 

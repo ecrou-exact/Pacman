@@ -33,8 +33,8 @@ public class World {
      */
     public World() {
         gameElements = new Array<GameElement>();
-        loadLevel("levels/level1.json");
-        // loadLevel("levels/level2.json");
+        // loadLevel("levels/level1.json");
+        loadLevel("levels/level2.json");
     }
     
     /**
